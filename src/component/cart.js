@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../style/cart.css";
+import { Link } from "react-router-dom";
 
 const Cart = ({ cart, setCart, handleChange }) => {
   const [price, setPrice] = useState(0);
@@ -43,7 +44,7 @@ const Cart = ({ cart, setCart, handleChange }) => {
         <span>Total Price of your Cart</span>
         <span>Rs - {price}</span>
       </div>
-      <button className="checkout">CheckOut</button>
+      <Link to="/checkout" > <button className="checkout">CheckOut</button></Link>
     </article>
   );
 };

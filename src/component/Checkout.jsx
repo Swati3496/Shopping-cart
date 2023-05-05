@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
+import "../style/checkout.css";
+import { Link } from 'react-router-dom';
+
 
 function CheckoutForm() {
   const [name, setName] = useState('');
@@ -70,7 +73,8 @@ function CheckoutForm() {
         onChange={(event) => setCvv(event.target.value)}
       />
 
-      <button type="submit">Submit Payment</button>
+      <Link to="/Payment"><button type="submit">Submit Payment</button></Link>
     </form>
   );
 }
+export default CheckoutForm;
