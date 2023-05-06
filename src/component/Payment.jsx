@@ -12,10 +12,12 @@ function PaymentForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     
-    if (paymentMethod === "phonepay") {
+    if (paymentMethod === "Credit Card") {
       setBillAmount(100);
     } else if (paymentMethod === "cod") {
       setBillAmount(150);
+    } else if (paymentMethod === "Debit Card"){
+        setBillAmount(151); 
     }
   };
 
@@ -29,11 +31,11 @@ function PaymentForm() {
           <option value="cod">Cash on Delivery</option>
         </select>
       </div>
-      {paymentMethod === "phonepay" && (
+      {paymentMethod === "UPI" && (
         <div>
-          <h3>PhonePe payment</h3>
-          <p>Make your payment through PhonePe.</p>
-          <button type="submit">Pay with PhonePe</button>
+          <h3>UPI</h3>
+          <p>Make your payment through UPI.</p>
+          <button type="submit">Pay with UPI</button>
         </div>
       )}
       {paymentMethod === "cod" && (
@@ -43,6 +45,20 @@ function PaymentForm() {
           <button type="submit">Pay with Cash on Delivery</button>
         </div>
       )}
+        {paymentMethod === "Credit Card" && (
+            <div>
+              <h3>Credit Card</h3>
+              <p>Make your payment through Credit Card.</p>
+              <button type="submit">Pay with Credit Card</button>
+            </div>
+            )}
+             {paymentMethod === "Debit Card" && (
+            <div>
+              <h3>Debit Card</h3>
+              <p>Make your payment through Debit Card.</p>
+              <button type="submit">Pay with Debit Card</button>
+            </div>
+            )}
       {billAmount > 0 && (
         <div>
           <h3>Your bill: ₹{billAmount}</h3>
